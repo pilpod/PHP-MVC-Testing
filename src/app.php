@@ -2,6 +2,8 @@
 
 namespace App;
 
-echo 'Hola MVC';
+use App\Controllers\Controller;
+
+$newController = new Controller;
 
 ?>
