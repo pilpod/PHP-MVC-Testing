@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="src/Views/css/main.css">
 </head>
 <body>
+
+    <header class="header">
+        <h1 id="main-title">Hello World</h1>
+    </header>
     
-    <h1>Hello World</h1>
 
 </body>
 </html>
