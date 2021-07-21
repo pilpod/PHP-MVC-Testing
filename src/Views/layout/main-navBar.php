@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Subscriptions</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pruebas/PHP-MVC-Without-htaccess/add-movie">Add Movie</a>
+        </li>
       </ul>
     </div>
   </div>
