@@ -15,7 +15,7 @@ class DbConnection {
     public function __construct()
     {
         try {
-            require_once('dataConnexion.php');
+            require_once('dataConnection.php');
             $this->setDataConnection();
             $this->dbConnection();
         }
