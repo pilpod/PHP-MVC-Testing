@@ -23,7 +23,6 @@ class DbConnection {
             echo 'Error de conexión: ' . $ex->getMessage();
             die();
         }
-
     }
 
     public function dbConnection() {
