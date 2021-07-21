@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="?action=home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">All Products</a>
@@ -16,7 +16,7 @@
           <a class="nav-link" href="#">Subscriptions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pruebas/PHP-MVC-Without-htaccess/add-movie">Add Movie</a>
+          <a class="nav-link" href="?action=add-movie">Add Movie</a>
         </li>
       </ul>
     </div>
