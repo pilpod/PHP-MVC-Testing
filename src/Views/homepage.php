@@ -1,4 +1,3 @@
-<?php var_dump($data) ?>
 <?php include('layout/head.php') ?>
 <?php include('layout/header.php') ?>
 
