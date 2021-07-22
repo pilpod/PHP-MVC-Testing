@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\View;
+use App\Models\MovieModel;
 
 class Controller {
 
@@ -23,7 +24,8 @@ class Controller {
 
     public function Index()
     {
-        return new View('homepage', null);
+        $movies = MovieModel::getAll();
+        return new View('homepage', $movies);
     }
 
     public function Create()

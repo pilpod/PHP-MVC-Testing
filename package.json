@@ -1,0 +1,23 @@
+{
+  "name": "php-mvc-without-htaccess",
+  "description": "Repo to practice MVC with PHP",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pilpod/PHP-MVC-Testing.git"
+  },
+  "author": "giacomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pilpod/PHP-MVC-Testing/issues"
+  },
+  "homepage": "https://github.com/pilpod/PHP-MVC-Testing#readme"
+}

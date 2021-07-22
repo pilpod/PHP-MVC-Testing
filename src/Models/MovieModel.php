@@ -2,19 +2,26 @@
 
 namespace App\Models;
 
+use App\Database\DbConnection;
+
 class MovieModel {
 
-    private ?int $id;
+    private string $id;
     private string $img;
     private string $title;
     private string $description;
+    private $database;
 
-    public function __construct(string $title, string $description, string $img, ?int $id )
+    public function __construct(string $title, string $description, string $img, string $id )
     {
         $this->id = $id;
         $this->img = $img;
         $this->title = $title;
         $this->description = $description;
+
+        if(!$this->database) {
+            $this->database = new DbConnection();
+        }
     }
 
 
@@ -31,9 +38,9 @@ class MovieModel {
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setId()
     {
-        $this->id = $id;
+        $this->id = uniqid("mov_");
 
         return $this;
     }
@@ -96,5 +103,21 @@ class MovieModel {
         $this->description = $description;
 
         return $this;
+    }
+
+    public static function getAll()
+    {
+        $database = new DbConnection();
+        $query = $database->mysql->query('SELECT * FROM movies');
+        $arrMovies = $query->fetchAll();
+        $moviesList = [];
+
+        foreach ($arrMovies as $value) {
+            $movie = new self($value['title'], $value['description'], $value['img'], $value['id_movie']);
+            array_push($moviesList, $movie);
+        }
+
+        return $moviesList;
+
     }
 }

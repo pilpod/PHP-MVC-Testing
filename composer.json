@@ -11,5 +11,8 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "testphp": "phpunit tests/Units"
     }
 }
