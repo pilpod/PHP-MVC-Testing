@@ -13,6 +13,7 @@
                         <h5 class='card-title'>{$movie->getTitle()}</h5>
                         <p class='card-text'>{$movie->getDescription()}</p>
                         <a href='#' class='btn btn-primary mt-2'>Add to cart</a>
+                        <a href='?action=delete&id={$movie->getId()}' class='btn btn-danger mt-2'>x</a>
                     </div>
                 </div>";
             } ?>

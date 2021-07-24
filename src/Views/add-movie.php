@@ -5,7 +5,7 @@
         <h4>Add Movie</h4>
         
         <div class="form-add-movie">
-            <form action="?action=post-movie" method="post">
+            <form action="?action=add-movie" method="post">
                 <label for="img">Url de la imagen</label>
                 <input type="text" name="img" id="img" class="form-control">
     

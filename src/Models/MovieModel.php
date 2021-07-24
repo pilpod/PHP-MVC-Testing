@@ -3,16 +3,17 @@
 namespace App\Models;
 
 use App\Database\DbConnection;
+use Exception;
 
 class MovieModel {
 
-    private string $id;
+    private ?string $id;
     private string $img;
     private string $title;
     private string $description;
     private $database;
 
-    public function __construct(string $title, string $description, string $img, string $id )
+    public function __construct(string $title, string $description, string $img, ?string $id )
     {
         $this->id = $id;
         $this->img = $img;
@@ -118,6 +119,22 @@ class MovieModel {
         }
 
         return $moviesList;
+
+    }
+
+    public function save()
+    {
+        try {
+            $this->setId();
+            $this->database->mysql->query(
+                "INSERT INTO `movies` (id_movie, title, description, img) 
+                VALUES ('{$this->id}', '{$this->title}', '{$this->description}', '{$this->img}');");
+            return 'Movie Saved';
+        }
+        catch (Exception $ex) {
+            // $this->database->mysql->rollBack();
+            echo 'Error: ' . $ex->getMessage();
+        }
 
     }
 }
