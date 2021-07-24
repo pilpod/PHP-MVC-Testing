@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Database\DbConnection;
 use Exception;
+use phpDocumentor\Reflection\DocBlock\Tags\Factory\StaticMethod;
 
 class MovieModel {
 
@@ -129,12 +130,22 @@ class MovieModel {
             $this->database->mysql->query(
                 "INSERT INTO `movies` (id_movie, title, description, img) 
                 VALUES ('{$this->id}', '{$this->title}', '{$this->description}', '{$this->img}');");
-            return 'Movie Saved';
         }
         catch (Exception $ex) {
             // $this->database->mysql->rollBack();
             echo 'Error: ' . $ex->getMessage();
         }
 
+    }
+
+    public static function delete($id)
+    {
+        $database = new DbConnection();
+        try {
+            $database->mysql->query("DELETE FROM movies WHERE id_movie='{$id}';");
+        }
+        catch (Exception $ex) {
+            echo 'A Error Happen: ' . $ex->getMessage();
+        }
     }
 }

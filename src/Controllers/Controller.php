@@ -20,6 +20,11 @@ class Controller {
             return $this->Create();
         }
 
+        if (isset($_GET) && isset($_GET["action"]) && ($_GET["action"] == "delete-movie")) {
+            $movieId = $_GET['id'];
+            $this->Delete($movieId);
+        }
+
         if (isset($_GET) && isset($_GET["action"]) && ($_GET["action"] == "home")) {
             return $this->Index();
         }
@@ -41,7 +46,13 @@ class Controller {
     public function Save(array $data)
     {
         $movie = new MovieModel($data['title'], $data['description'], $data['img'], null);
-        $result = $movie->save();
+        $movie->save();
+        $this->Index();
+    }
+
+    public function Delete(string $id)
+    {
+        MovieModel::delete($id);
         $this->Index();
     }
 
