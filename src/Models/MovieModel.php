@@ -14,7 +14,7 @@ class MovieModel {
     private string $description;
     private $database;
 
-    public function __construct(string $title, string $description, string $img, ?string $id )
+    public function __construct(string $title, string $description, string $img, ?string $id = null )
     {
         $this->id = $id;
         $this->img = $img;
@@ -43,8 +43,6 @@ class MovieModel {
     public function setId()
     {
         $this->id = uniqid("mov_");
-
-        return $this;
     }
 
     /**
